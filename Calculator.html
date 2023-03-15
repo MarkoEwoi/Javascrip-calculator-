@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script type="text/javascript">
+		
+
+		var cvalue;
+//A functions to clear the input field
+function calcClear(){
+document.getElementById("inpt").value=""; 
+}
+//A functions to implement backspace
+function calcBksp(){
+var cvalue=document.getElementById("inpt").value;
+lvalue=cvalue.substring(0,cvalue.length-1);
+document.getElementById("inpt").value=lvalue; 
+}
+//A functions to precede a + or – symbols to the value in the input field
+function addPlusMinus(){
+var cvalue=document.getElementById("inpt").value;
+var sign=cvalue.substr(0,1);
+var nval=cvalue.substr(1);
+if(sign=="+")
+cvalue="-"+nval;
+else
+if(sign=="-")
+cvalue="+"+nval;
+else
+cvalue="+"+cvalue;
+document.getElementById("inpt").value=cvalue; 
+}
+//Operand Functions
+function addSeven(){
+var svalue=document.getElementById("inpt").value;
+cvalue=svalue+document.getElementById("sv").value;
+document.getElementById("inpt").value=cvalue; 
+}
+function addEight(){
+var svalue=document.getElementById("inpt").value;
+cvalue=svalue+document.getElementById("et").value;
+document.getElementById("inpt").value=cvalue; 
+}
+function addNine(){
+var svalue=document.getElementById("inpt").value;
+cvalue=svalue+document.getElementById("nn").value;
+document.getElementById("inpt").value=cvalue; 
+}
+function addSix(){
+var svalue=document.getElementById("inpt").value;
+cvalue=svalue+document.getElementById("six").value;
+document.getElementById("inpt").value=cvalue; 
+}
+function addFive(){
+var svalue=document.getElementById("inpt").value;
+cvalue=svalue+document.getElementById("five").value;
+document.getElementById("inpt").value=cvalue; 
+}
+function addFour(){
+var svalue=document.getElementById("inpt").value;
+cvalue=svalue+document.getElementById("four").value;
+document.getElementById("inpt").value=cvalue; 
+}
+function addThree(){
+var svalue=document.getElementById("inpt").value;
+cvalue=svalue+document.getElementById("three").value;
+document.getElementById("inpt").value=cvalue; 
+}
+function addTwo(){
+var svalue=document.getElementById("inpt").value;
+cvalue=svalue+document.getElementById("two").value;
+document.getElementById("inpt").value=cvalue; 
+}
+function addOne(){
+var svalue=document.getElementById("inpt").value;
+cvalue=svalue+document.getElementById("one").value;
+document.getElementById("inpt").value=cvalue; 
+}
+function addZero(){
+var svalue=document.getElementById("inpt").value;
+cvalue=svalue+document.getElementById("zero").value;
+document.getElementById("inpt").value=cvalue; 
+}
+function addPoint(){
+var svalue=document.getElementById("inpt").value;
+cvalue=svalue+document.getElementById("point").value;
+document.getElementById("inpt").value=cvalue; 
+}
+//Operators Functions
+function addMinus(){
+var svalue=document.getElementById("inpt").value;
+cvalue=svalue+document.getElementById("minus").value;
+document.getElementById("inpt").value=cvalue; 
+
+ }
+function addPlus(){
+var svalue=document.getElementById("inpt").value;
+cvalue=svalue+document.getElementById("plus").value;
+document.getElementById("inpt").value=cvalue; 
+
+ }
+ function addDivide(){
+var svalue=document.getElementById("inpt").value;
+cvalue=svalue+document.getElementById("dvd").value;
+document.getElementById("inpt").value=cvalue; 
+
+ }
+ function addTimes(){
+var svalue=document.getElementById("inpt").value;
+cvalue=svalue+document.getElementById("times").value;
+document.getElementById("inpt").value=cvalue; 
+
+ }
+ function display(){
+var svalue=document.getElementById("inpt").value;
+cvalue= eval(svalue);
+document.getElementById("inpt").value=cvalue; 
+
+ }
+	</script>
+</head>
+<body>
+<table border=1>
+<form name='calc' id='calc' style='width:100%'>
+<tr style='font-size:16px;background:darkblue;color:white'><th 
+colspan=5>Calculator</th></tr>
+<tr style='font-size:14px;background:grey;color:white'>
+<th>Calculator</th><th>Edit</th><th>View</th><th>Help</th></tr>
+<tr><th colspan=4><input type=text name=inpt id=inpt style='width:95%'></th></tr>
+<tr>
+<th><input type=button name=bksp id=bksp value='Bksp' onClick='calcBksp();'></th>
+<th><input type=button name=ce id=ce value='CE' onclick='calcClear()'></th>
+<th><input type=button name=clr id=clr value='Clr' onClick='calcClear();'></th>
+<th><input type=button name=pm id=pm value='&plusmn' 
+onClick='addPlusMinus();'></th>
+</tr>
+<tr>
+<th><input type=button name=sv id=sv value='7' onClick='addSeven();'></th>
+<th><input type=button name=et id=et value='8' onClick='addEight();'></th>
+<th><input type=button name=nn id=nn value='9' onClick='addNine();'></th>
+
+<!-- &divide doesnt produce any output so I used html number value for divide-->
+<th><input type=button name=dvd id=dvd value='&#47' onclick='addDivide()'></th>
+</tr>
+
+
+<tr>
+<th><input type=button name=four id=four value='4' onClick='addFour();'></th>
+<th><input type=button name=five id=five value='5' onClick='addFive();'></th>
+<th><input type=button name=six id=six value='6' onClick='addSix();'></th>
+<th><input type=button name=times id=times value='&#42' onclick='addTimes()' ></th>
+</tr>
+<tr>
+<th><input type=button name=one id=one value='1' onClick='addOne();'></th>
+<th><input type=button name=two id=two value='2' onClick='addTwo();'></th>
+<th><input type=button name=three id=three value='3' onClick='addThree();'></th>
+<th><input type=button name=minus id=minus value='&#45' onclick='addMinus()'></th>
+</tr>
+<tr>
+<th><input type=button name=zero id=zero value='0' onClick='addZero();'></th>
+<th><input type=button name=point id=point value='&#46' onClick='addPoint();'></th>
+<th><input type=button name=equal id=equal value='&#61' onClick='display();'></th>
+<th><input type=button name=plus id=plus value='&#43' onclick='addPlus()'></th>
+</tr>
+</form>
+</table>
+</body>
+</html>
